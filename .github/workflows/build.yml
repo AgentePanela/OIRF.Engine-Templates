@@ -22,7 +22,7 @@ jobs:
         run: dotnet restore
 
       - name: Clear Content
-        run: rm -rf Content.Client/Content
+        run: rm -rf MyGame/Content
 
       - name: Build
         run: dotnet build --no-restore -c Release --verbosity minimal -p:BuildContent=false

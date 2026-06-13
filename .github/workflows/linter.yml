@@ -30,7 +30,7 @@ jobs:
           dotnet-version: '8.0.x'
       
       - name: Clear Content
-        run: rm -rf Content.Client/Content
+        run: rm -rf MyGame/Content
 
       - name: Run YAML Linter
         run: dotnet run --project Tools/YAML.Linter/YAML.Linter.csproj

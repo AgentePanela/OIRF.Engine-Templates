@@ -12,7 +12,7 @@ echo ==============================
 
 set /p c=Choose: 
 
-set PROJECT=Content\Content.Client.csproj
+set PROJECT=MyGame\MyGame.csproj
 set DIR=Publish
 
 if "%c%"=="1" (
