@@ -1,0 +1,33 @@
+- type: inputMap
+  id: Default
+  actions:
+    MoveUp:
+      keys: [W, Up]
+      gamepad: [DPadUp]
+    MoveDown:
+      keys: [S, Down]
+      gamepad: [DPadDown]
+    MoveLeft:
+      keys: [A, Left]
+      gamepad: [DPadLeft]
+    MoveRight:
+      keys: [D, Right]
+      gamepad: [DPadRight]
+    ZoomIn:
+      keys: [I]
+      gamepad: [RightTrigger]
+    ZoomOut:
+      keys: [O]
+      gamepad: [LeftTrigger]
+    Interact:
+      mouse: [Left]
+    CommandMove:
+      mouse: [Right]
+    TogglePowerOverlay:
+      keys: [P]
+
+- type: inputMap
+  id: Debug
+  actions:
+    Reset:
+      keys: [R]

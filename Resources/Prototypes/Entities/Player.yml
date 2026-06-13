@@ -1,0 +1,24 @@
+# This is a test entity to create a entity that is capable to move!
+- type: entity
+  id: TestPlayer
+  name: Player
+  components:
+  - type: Transform
+  - type: Sprite
+    key: Test/Player 
+  - type: Physics
+  # - type: Camera2D
+  - type: Collision
+    fixtures:
+      tree-trunk:
+        shape:
+          type: BoxShape
+          size: [32, 32]
+          offset: [0, 0]
+        layers: ["mob"]
+        masks: ["solids", "terrain"]
+        hard: true
+  - type: InputMover # The Component we make in MyGame
+  - type: Tag # The tag we created in tags.yml
+    tags:
+    - Test

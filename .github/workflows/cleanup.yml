@@ -1,0 +1,40 @@
+#name: "Cleanup PR Assets"
+#
+#on:
+#  pull_request_target:
+#    types: [closed]
+#
+#permissions:
+#  contents: write
+#  actions: write
+#
+#jobs:
+#  cleanup:
+#    runs-on: ubuntu-latest
+#    env:
+#      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      REPO: ${{ github.repository }}
+#      PR_NUM: ${{ github.event.pull_request.number }}
+#    steps:
+#      - name: Delete PR images from release
+#        shell: bash
+#        run: |
+#          if ! gh release view pr-assets --repo "$REPO" > /dev/null 2>&1; then
+#            echo "Release pr-assets not found, nothing to clean up."
+#            exit 0
+#          fi
+#
+#          PREFIX="pr${PR_NUM}__"
+#          echo "PREFIX: $PREFIX"
+#
+#          gh release view pr-assets --repo "$REPO" --json assets \
+#            --jq '.assets[] | "\(.id) \(.name)"' | \
+#          ( grep "$PREFIX" || true ) | \
+#          while read -r asset_id asset_name; do
+#            echo "Deleting $asset_name ($asset_id)"
+#            
+#            gh api \
+#              --method DELETE \
+#              -H "Accept: application/vnd.github+json" \
+#              "/repos/${REPO}/releases/assets/${asset_id}"
+#          done

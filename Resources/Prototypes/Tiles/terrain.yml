@@ -1,0 +1,6 @@
+# This is a test tile prototype!
+- type: tile
+  id: Test
+  sprite: Tiles/Test
+  blendPriority: 1
+  solid: false

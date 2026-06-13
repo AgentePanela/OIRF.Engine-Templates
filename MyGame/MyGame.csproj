@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <RollForward>Major</RollForward>
+    <PublishReadyToRun>false</PublishReadyToRun>
+    <TieredCompilation>false</TieredCompilation>
+    <Nullable>enable</Nullable>
+    <NoWarn>CS8618</NoWarn>
+    <BuildContent Condition="'$(BuildContent)' == ''">true</BuildContent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Icon.ico" />
+    <None Remove="Icon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icon.ico">
+      <LogicalName>Icon.ico</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icon.bmp">
+      <LogicalName>Icon.bmp</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DiscordRichPresence" Version="1.6.1.70" />
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.*" />
+    <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.*" Condition="'$(BuildContent)' != 'false'" />
+    <PackageReference Include="Myra" Version="1.5.10" />
+    <PackageReference Include="Udun.FastNoiseLite" Version="1.0.1" />
+  </ItemGroup>
+
+  <!-- Engine changes: -->
+  <ItemGroup>
+    <ProjectReference Include="..\Engine\Engine.Client\Engine.Client.csproj" />
+    <ProjectReference Include="..\Engine\Engine.Shared\Engine.Shared.csproj" />
+  </ItemGroup>
+  <PropertyGroup>
+    <OutputPath>..\bin\$(AssemblyName)</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <DefineConstants>TRACE;PUBLISH</DefineConstants>
+  </PropertyGroup>
+
+  <Target Name="ContentPipelinePublish" AfterTargets="Publish" Condition="'$(Configuration)' == 'Release'">
+    <Message Text="PublishDir: $(PublishDir)" Importance="high" />
+    <!-- todo: add ts when make our own content pipeline -->
+    <!-- <Exec Command="dotnet run -project ../Engine.Build/Engine.Build.csproj" />-->
+    <ItemGroup>
+      <ResourceFiles Include="..\Resources\**\*.*" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(ResourceFiles)" DestinationFolder="$(PublishDir)Resources\%(RecursiveDir)" SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>

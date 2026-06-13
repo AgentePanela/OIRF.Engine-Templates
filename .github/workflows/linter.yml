@@ -1,0 +1,36 @@
+name: YAML Linter
+
+on:
+  #push:
+  #  paths:
+  #    - 'Resources/Prototypes/**'
+  #    - '**'
+  pull_request:
+    paths:
+      - 'Resources/Prototypes/**'
+      - '**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      # download repo code in the virtual machine
+      - name: Checkout
+        uses: actions/checkout@v4
+
+#      - name: Install yamllint
+#        run: pip install yamllint
+#      - name: Lint YAML syntax
+#        run: yamllint Resources/Prototypes/
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      
+      - name: Clear Content
+        run: rm -rf Content.Client/Content
+
+      - name: Run YAML Linter
+        run: dotnet run --project Tools/YAML.Linter/YAML.Linter.csproj
