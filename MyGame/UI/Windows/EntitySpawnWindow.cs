@@ -202,7 +202,7 @@ public sealed class EntitySpawnWindow : DefaultWindow
     /// </summary>
     public string? TryGetBaseSpriteKey(EntityPrototype proto)
     {
-        var sprType = IoCManager.Resolve<ComponentFactory>().GetSanitazedByType<SpriteComponent>();
+        var sprType = IoCManager.Resolve<ComponentFactory>().GetSanitizedByType<SpriteComponent>();
         if (sprType is null || !proto.TryGetComponentEntry(sprType, out var compEntry))
             return null;
         
