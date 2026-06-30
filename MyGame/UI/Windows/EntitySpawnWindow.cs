@@ -128,7 +128,7 @@ public sealed class EntitySpawnWindow : DefaultWindow
             if (!string.IsNullOrEmpty(filter) && !id.ToLower().Contains(filter))
                 continue;
 
-            string? spriteKey = TryGetBaseSpriteKey(proto);
+            string? spriteKey = proto.TryGetBaseSpriteKey();
             var isOdd = currentIndex % 2 != 0;
             var entItem = new EntityListItem(id, isOdd, spriteKey);
 
@@ -181,35 +181,6 @@ public sealed class EntitySpawnWindow : DefaultWindow
             if (odd)
                 Background = new SolidBrush(new Color(0, 0, 0, 100));
         }
-    }
-
-    /// <summary>
-    /// This tries to get the prototype base sprite based on if it has SpriteComponent or any other similar visual component.
-    /// </summary>
-    public bool TryGetBaseSprite(EntityPrototype proto, [NotNullWhen(true)]out Sprite2D? spr)
-    {
-        spr = default;
-        var key = TryGetBaseSpriteKey(proto);
-        if (key is null)
-            return false;
-        
-        spr = Sprite2D.GetFromAtlas(key);
-        return true;
-    }
-
-    /// <summary>
-    /// This tries to get the prototype base sprite key based on if it has SpriteComponent or any other similar visual component.
-    /// </summary>
-    public string? TryGetBaseSpriteKey(EntityPrototype proto)
-    {
-        var sprType = IoCManager.Resolve<ComponentFactory>().GetSanitizedByType<SpriteComponent>();
-        if (sprType is null || !proto.TryGetComponentEntry(sprType, out var compEntry))
-            return null;
-        
-        if (!compEntry.TryGet<string>("Key", out var key))
-            return null;
-        
-        return key;
     }
 
     private enum WindowState
