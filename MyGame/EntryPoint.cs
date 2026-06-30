@@ -44,6 +44,7 @@ public class EntryPoint : GameClient
         #endif
 
         // register [RegisterIoC] attributes from this project
+        SharedEntryPoint.Init();
         IoCManager.AutoRegister(Assembly.GetExecutingAssembly());
     }
 

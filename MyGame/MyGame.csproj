@@ -32,6 +32,7 @@
 
   <!-- Engine changes: -->
   <ItemGroup>
+    <ProjectReference Include="..\Content.Shared\Content.Shared.csproj" />
     <ProjectReference Include="..\Engine\Engine.Client\Engine.Client.csproj" />
     <ProjectReference Include="..\Engine\Engine.Shared\Engine.Shared.csproj" />
   </ItemGroup>

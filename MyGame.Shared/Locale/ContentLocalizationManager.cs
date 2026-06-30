@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Engine.Shared.Locale;
-using MyGame.Configuration.CVars;
+using MyGame.Shared.Configuration.CVars;
 using Linguini.Shared.Types.Bundle;
 using Engine.Shared.IoC;
 using Engine.Shared.Configuration;
 
-namespace MyGame.Locale;
+namespace MyGame.Shared.Locale;
 
 [RegisterIoC]
 public sealed class ContentLocalizationManager
@@ -26,6 +26,7 @@ public sealed class ContentLocalizationManager
 
     public void Init()
     {
+
         // global functions
         _locMan.AddFunction("UPPER", Upper);
         _locMan.AddFunction("LOWER", Lower);

@@ -1,6 +1,6 @@
 using Engine.Shared.Configuration;
 
-namespace MyGame.Configuration.CVars;
+namespace MyGame.Shared.Configuration.CVars;
 
 [CVarDefs]
 public sealed class LocalizationCVars
