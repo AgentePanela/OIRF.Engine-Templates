@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Diagnostics;
 using System.Reflection;
 
-var options = new EntryPointOptions()
+var options = new ClientOptions()
 {
     // Basic game info (REQUIRED)
     Width = 854,

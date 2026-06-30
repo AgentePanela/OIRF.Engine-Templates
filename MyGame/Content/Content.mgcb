@@ -19,3 +19,50 @@
 /processorParam:DebugMode=Auto
 /build:Shaders/Grayscale.fx
 
+#begin Shaders/LightingApply.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/LightingApply.fx
+
+#begin Shaders/LightingDebug.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/LightingDebug.fx
+
+#begin Shaders/ShadowDepth.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/ShadowDepth.fx
+
+#begin Shaders/LightSoft.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/LightSoft.fx
+
+#begin Shaders/LightBlur.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/LightBlur.fx
+
+#begin Shaders/WallMerge.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/WallMerge.fx
+
+#begin Shaders/OcclusionMask.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/OcclusionMask.fx
+
+#begin Shaders/Unshaded.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Unshaded.fx

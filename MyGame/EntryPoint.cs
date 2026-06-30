@@ -24,7 +24,7 @@ public class EntryPoint : GameClient
     //! This code is for the entity spawn window available in this template
     private EntitySpawnWindow? spawnWindow = null;
 
-    public EntryPoint(EntryPointOptions options) : base(options)
+    public EntryPoint(ClientOptions options) : base(options)
     {
         //! This code block is used to enable cmd console if the game is opened with --console
         #if !DEBUG
