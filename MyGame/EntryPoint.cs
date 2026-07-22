@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using MyGame.UI.Windows;
+using MyGame.Shared;
 
 namespace MyGame;
 

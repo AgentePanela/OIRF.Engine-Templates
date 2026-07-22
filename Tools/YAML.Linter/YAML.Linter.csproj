@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MyGame.Server\MyGame.Server.csproj" />
+    <ProjectReference Include="..\..\MyGame.Shared\MyGame.Shared.csproj" />
     <ProjectReference Include="..\..\MyGame\MyGame.csproj" />
     <ProjectReference Include="..\..\Engine\Engine.Client\Engine.Client.csproj" />
     <ProjectReference Include="..\..\Engine\Engine.Server\Engine.Server.csproj" />

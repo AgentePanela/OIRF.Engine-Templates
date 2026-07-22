@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGame.Server", "MyGame.Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGame.Shared", "MyGame.Shared\MyGame.Shared.csproj", "{B45CD70D-4D1B-47E1-A5C2-CC97CECB38DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine.ResourcesBuilder", "Engine\Engine.ResourcesBuilder\ResourcesBuilder.csproj", "{E2124D9C-656B-4395-8F02-FC79C605BB58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +117,18 @@ Global
 		{B45CD70D-4D1B-47E1-A5C2-CC97CECB38DF}.Release|x64.Build.0 = Release|Any CPU
 		{B45CD70D-4D1B-47E1-A5C2-CC97CECB38DF}.Release|x86.ActiveCfg = Release|Any CPU
 		{B45CD70D-4D1B-47E1-A5C2-CC97CECB38DF}.Release|x86.Build.0 = Release|Any CPU
+		{E2124D9C-656B-4395-8F02-FC79C605BB58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2124D9C-656B-4395-8F02-FC79C605BB58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2124D9C-656B-4395-8F02-FC79C605BB58}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E2124D9C-656B-4395-8F02-FC79C605BB58}.Debug|x64.Build.0 = Debug|Any CPU
+		{E2124D9C-656B-4395-8F02-FC79C605BB58}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E2124D9C-656B-4395-8F02-FC79C605BB58}.Debug|x86.Build.0 = Debug|Any CPU
+		{E2124D9C-656B-4395-8F02-FC79C605BB58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2124D9C-656B-4395-8F02-FC79C605BB58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2124D9C-656B-4395-8F02-FC79C605BB58}.Release|x64.ActiveCfg = Release|Any CPU
+		{E2124D9C-656B-4395-8F02-FC79C605BB58}.Release|x64.Build.0 = Release|Any CPU
+		{E2124D9C-656B-4395-8F02-FC79C605BB58}.Release|x86.ActiveCfg = Release|Any CPU
+		{E2124D9C-656B-4395-8F02-FC79C605BB58}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,6 +138,7 @@ Global
 		{729F8027-8E2F-43EE-8D8F-CBEDB84CF7A9} = {07C2787E-EAC7-C090-1BA3-A61EC2A24D84}
 		{9BDB941D-B1D0-4F82-B4BA-886881489FDC} = {37D55912-7F50-45AD-8BFC-3B8BC5FFCAE4}
 		{59CE2395-37BE-4AA9-9756-2DC33F6C342C} = {37D55912-7F50-45AD-8BFC-3B8BC5FFCAE4}
+		{E2124D9C-656B-4395-8F02-FC79C605BB58} = {37D55912-7F50-45AD-8BFC-3B8BC5FFCAE4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9CCE42B8-5B3B-406C-9D95-7851043BD916}

@@ -9,6 +9,7 @@ using Engine.Client;
 using System.Diagnostics.CodeAnalysis;
 using Engine.Server;
 using MyGame;
+using MyGame.Shared;
 
 Log.Debug("Starting YAML Linter...");
 Log.ExceptOnWarn = true;
@@ -46,7 +47,7 @@ bool GetAssemblies([NotNullWhen(true)] out Assembly[]? assemblies)
     if (client is null)
         return false;
 
-    var server = Assembly.GetAssembly(typeof(ServerClient));
+    var server = Assembly.GetAssembly(typeof(GameServer));
     if (server is null)
         return false;
     
@@ -54,13 +55,13 @@ bool GetAssemblies([NotNullWhen(true)] out Assembly[]? assemblies)
     if (cClient is null)
         return false;
 
-    /*var cShared = Assembly.GetAssembly(typeof(ContentSharedClass));
+    var cShared = Assembly.GetAssembly(typeof(SharedEntryPoint));
     if (cShared is null)
         return false;
 
-    var cServer = Assembly.GetAssembly(typeof(ContentServerClass));
+    var cServer = Assembly.GetAssembly(typeof(MyGame.Server.EntryPoint));
     if (cServer is null)
-        return false;*/
+        return false;
     
     assemblies = [Assembly.GetExecutingAssembly(), client, server, cClient];
     return true;
