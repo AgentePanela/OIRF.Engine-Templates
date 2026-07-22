@@ -26,7 +26,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.*" />
-    <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.*" />
     <PackageReference Include="Myra" Version="1.5.10" />
   </ItemGroup>
 
@@ -34,6 +33,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.Client\Engine.Client.csproj" />
     <ProjectReference Include="..\Engine\Engine.Shared\Engine.Shared.csproj" />
+    <ProjectReference Include="..\Engine\Engine.ResourcesBuilder\ResourcesBuilder.csproj" />
   </ItemGroup>
   <PropertyGroup>
     <OutputPath>..\bin\$(AssemblyName)</OutputPath>
@@ -44,9 +44,11 @@
     <Message Text="PublishDir: $(PublishDir)" Importance="high" />
     <ItemGroup>
       <ResourceFiles Include="..\Resources\**\*.*" />
+      <BuiltShaderFiles Include="..\bin\$(AssemblyName)\Content\**\*.xnb" />
     </ItemGroup>
 
     <Copy SourceFiles="@(ResourceFiles)" DestinationFolder="$(PublishDir)Resources\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(BuiltShaderFiles)" DestinationFolder="$(PublishDir)Content\%(RecursiveDir)" SkipUnchangedFiles="true" />
   </Target>
 
 </Project>
