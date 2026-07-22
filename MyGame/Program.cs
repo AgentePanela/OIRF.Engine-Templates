@@ -54,5 +54,9 @@ var options = new ClientOptions()
     // More options also available
 };
 
+#if DEBUG
+Engine.ResourcesBuilder.ShaderBuilder.Build();
+#endif
+
 using var game = new MyGame.EntryPoint(options);
 game.Run();
